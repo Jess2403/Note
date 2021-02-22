@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MiniProjetJavascript</title>
+</head>
+<body>
+<h1>Note</h1>
+
+
+<script type="text/javascript">
+    let notesJSON = [
+        {
+            "titre": "Notes Javascript",
+            "texte": "Une méthode est une fonction appartenant à un objet",
+            "date": "15/01/2021",
+            "couleur": "rouge",
+            "dateRappel": "null"
+        },
+        {
+            "titre": "Notes Javascript",
+            "toDo": [
+                {"Faire les courses": true},
+                {"Payer le loyer": false}
+            ],
+            "date": "18/01/2021",
+            "couleur": "rouge",
+            "dateRappel": "null"
+        }
+    ]
+    let noteJSON = {
+        "titre": "Notes Javascript",
+        "texte": "Une méthode est une fonction appartenant à un objet",
+        "date": "15/01/2021",
+        "couleur": "rouge",
+        "dateRappel": "null"
+    }
+    class Note {
+        constructor(titre, couleur, dateRappel) {
+            this.titre = titre;
+            this.couleur = couleur;
+            this. dateRappel = dateRappel;
+        }
+    }
+    class TextNote {
+        constructor(texte) {
+            this.texte = texte;
+        }
+    }
+    class ChecklistNote {
+        constructor(date) {
+            this.date = date;
+        }
+    }
+
+</script>
+</body>
+</html>
