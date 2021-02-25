@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Note</h1>
-
+<div id="displayNote"></div>
 
 <script type="text/javascript">
     let notesJSON = [
@@ -28,31 +28,47 @@
             "dateRappel": "null"
         }
     ]
-    let noteJSON = {
+    let noteArray = ({
         "titre": "Notes Javascript",
         "texte": "Une méthode est une fonction appartenant à un objet",
         "date": "15/01/2021",
         "couleur": "rouge",
         "dateRappel": "null"
-    }
+    });
     class Note {
         constructor(titre, couleur, dateRappel) {
             this.titre = titre;
             this.couleur = couleur;
             this. dateRappel = dateRappel;
         }
-    }
-    class TextNote {
-        constructor(texte) {
-            this.texte = texte;
+        changercouleur() {
+            let couleur = new couleur("orange");
+            let couleur = new couleur("jaune");
+            let couleur = new couleur("vert");
+            console.log(`${this.couleur}`);
         }
     }
-    class ChecklistNote {
-        constructor(date) {
-            this.date = date;
-        }
-    }
+    function displayNote() {
+        class TextNote {
+            constructor(texte) {
+                this.texte = texte;
+            }
 
+            changertexte() {
+                let texte = new texte("urgent et important");
+                let texte = new texte("non-urgent et important");
+                let texte = new texte("urgent et non-important");
+                let texte = new texte("non-urgent et non-important");
+                console.log(`${this.texte}`);
+            }
+        }
+
+        class ChecklistNote {
+            constructor(date) {
+                this.date = date;
+            }
+        }
+    }
 </script>
 </body>
 </html>
