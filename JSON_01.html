@@ -9,7 +9,7 @@
 <div id="div1"></div>
 
 <script type="text/javascript">
-    let notesJSON = [
+    let notesJSON = `[
         {
             "titre": "Notes Javascript",
             "texte": "Une méthode est une fonction appartenant à un objet",
@@ -27,7 +27,7 @@
             "couleur": "rouge",
             "dateRappel": "null"
         }
-    ]
+    ]`;
     let notesArray = ({
         "titre": "Notes Javascript",
         "texte": "Une méthode est une fonction appartenant à un objet",
@@ -36,19 +36,63 @@
         "dateRappel": "null"
     });
     class Note {
-        constructor(titre, couleur, dateRappel) {
+        constructor(titre, date, couleur, dateRappel) {
             this.titre = titre;
+            this.date = date;
             this.couleur = couleur;
-            this. dateRappel = dateRappel;
+            this.dateRappel = dateRappel;
         }
-        changercouleur() {
-            let couleur = new couleur("orange");
-            let couleur = new couleur("jaune");
-            let couleur = new couleur("vert");
-            console.log(`${this.couleur}`);
+        get titre() {
+            return this._titre;
+        }
+        get date() {
+            return this._date;
+        }
+        get couleur() {
+            return this._couleur;
+        }
+        get dateRappel() {
+            return this._dateRappel;
+        }
+        set titre(titre) {
+            this._titre = titre;
+        }
+        set date(date) {
+            this._date = date;
+        }
+        set couleur(couleur) {
+            this._couleur = couleur;
+        }
+        set dateRappel(dateRappel) {
+            this._dateRappel = dateRappel;
         }
     }
-    function displayNote() {
+    class TextNote extends Note {
+        constructor(titre, date, couleur, dateRappel, texte) {
+            super(titre, date, couleur, dateRappel);
+            this.texte = texte;
+        }
+        get texte() {
+            return this._texte;
+        }
+        set texte(texte) {
+            this._texte = texte;
+        }
+    }
+
+    class ChecklistNote extends Note {
+        constructor(titre, date, couleur, dateRappel,toDo) {
+            super(titre, date, couleur, dateRappel);
+            this.toDo = toDo;
+        }
+        get toDo() {
+            return this._toDo;
+        }
+        set toDo(toDo) {
+            this._toDo = toDo;
+        }
+    }
+    /*function displayNote() {
         function addElement () {
             // crée un nouvel élément div
             var newDiv = document.createElement("div");
@@ -60,26 +104,9 @@
             // ajoute le nouvel élément créé et son contenu dans le DOM
             var currentDiv = document.getElementById('div1');
             document.body.insertBefore(newDiv, currentDiv);
-        class TextNote {
-            constructor(texte) {
-                this.texte = texte;
-            }
 
-            changertexte() {
-                let texte = new texte("urgent et important");
-                let texte = new texte("non-urgent et important");
-                let texte = new texte("urgent et non-important");
-                let texte = new texte("non-urgent et non-important");
-                console.log(`${this.texte}`);
-            }
-        }
+    }*/
 
-        class ChecklistNote {
-            constructor(date) {
-                this.date = date;
-            }
-        }
-    }
 </script>
 </body>
 </html>
